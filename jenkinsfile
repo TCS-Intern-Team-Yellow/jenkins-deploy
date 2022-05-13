@@ -2,12 +2,10 @@ pipeline {
 	agent any
 	stages {
 		stage('Sample') {
-			environment {
-                PEM_KEY = credentials('TCS_YELLOW_TEAM_PEM')
-            }
 			steps {
-				cleanWs()
-				sh 'ssh -tty -i $PEM_KEY ec2-user@10.0.143.117'
+				sshagent (credentials: ['TCS_YELLOW_TEAM_PEM']) {
+					sh 'ssh -o StrictHostKeyChecking=no -l yellow 10.0.143.117 uname -a'
+				}
 			}
 		}
 	}
