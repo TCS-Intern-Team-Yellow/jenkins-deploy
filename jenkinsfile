@@ -8,7 +8,7 @@ pipeline {
 			steps {
 				cleanWs()
 				sh 'ssh -tty -i $PEM_KEY ec2-user@10.0.143.117'
-				sh 'mkdir test1234'		
+				sh 'echo "connected"'	
 			}
 		}
 	}
