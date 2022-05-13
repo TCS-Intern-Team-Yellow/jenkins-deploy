@@ -1,14 +1,14 @@
 pipeline {
 	agent any
 	stages {
-		environment{
-			TCS_YELLOW_PEM_KEY = credentials('ec2-user (shopper-frontend)')
-		}
 		stage('Sample') {
+			environment {
+				TCS_YELLOW_PEM_KEY = credentials('ec2-user (shopper-frontend)')
+			}
 			steps {
 				cleanWs()
 				sh 'ssh -i $TCS_YELLOW_PEM_KEY ec2-user@44.204.88.251'
-				sh 'mddir test1234'		
+				sh 'mddir test1234'		 
 			}
 		}
 	}
