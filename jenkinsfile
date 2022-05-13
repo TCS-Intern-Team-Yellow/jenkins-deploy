@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Sample') {
 			steps {
-				sshagent (credentials: ['TCS_YELLOW_TEAM_PEM']) {
+				sshagent (credentials: ['10.0.156.103']) {
 					sh 'ssh -o StrictHostKeyChecking=no -l yellow 10.0.143.117 uname -a'
 				}
 			}
