@@ -6,7 +6,7 @@ pipeline {
 				PEM_KEY = credentials('TCS_YELLOW_TEAM_PEM')
             }
 			steps {
-				sh 'ssh --tty -v -i $TCS_YELLOW_TEAM_PEM ec2-user@10.0.143.117'
+				sh 'ssh -tty -v -i $TCS_YELLOW_TEAM_PEM ec2-user@10.0.143.117'
 			}
 		}
 	}
