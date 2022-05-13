@@ -7,6 +7,7 @@ pipeline {
             }
 			steps {
 				cleanWs()
+				sh 'echo $PEM_KEY'
 				sh 'ssh -i $PEM_KEY ec2-user@44.204.88.251'
 				sh 'mkdir test1234'		 
 			}
