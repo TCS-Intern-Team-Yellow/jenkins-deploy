@@ -4,6 +4,7 @@ pipeline {
 		stage('Sample') {
 			steps {
 				sh "aws --version"
+				git 'https://github.com/TCS-Intern-Team-Yellow/login'
 			}
 		}
 	}
