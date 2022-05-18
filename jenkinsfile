@@ -6,6 +6,7 @@ pipeline {
 				sshagent(['10.0.156.103']) {
 					sh 'ssh -o StrictHostKeyChecking=no ec2-user@10.0.156.103'
 					sh 'pwd'
+					sh 'mkdir jenkins20220518'
 				}
 			}
 		}
